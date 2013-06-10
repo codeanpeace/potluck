@@ -1,0 +1,11 @@
+<h1>Ongoing Potlucks</h1>
+
+<ul>
+  <% @potlucks.each do |potluck| %>
+    <li>
+      <strong><%= potluck.name %></strong>
+      <a href="/view_potluck/<%= potluck.id %>">View</a>
+      <a href="/edit_potluck/<%= potluck.id %>">Edit</a>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,32 @@
+<!-- accessible @potluck from controller -->
+
+<h1><%= @potluck.name %></h1>
+
+<hr>
+
+<h3><a href="/<%= @potluck.id %>/new_item">New Item</a></h3>
+
+<hr>
+
+<table border="1">
+  <tr>
+    <th>Items</th>
+    <th>Tags</th>
+    <th>Claimed by: </th>
+  </tr>
+  <% Item.all.each do |item| %>
+    <% if item.potluck_id == @potluck.id %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.list_of_tags %></td>
+        <td>
+          <% if item.person_id %>
+            <%= Person.find(item.person_id).name %>
+          <% else %>
+            <a href="/<%= @potluck.id %>/claim_item/<%= item.id %>">Unclaimed!</a>
+          <% end %>
+        </td>
+    <% end %>
+      <tr>
+  <% end %>
+</table>

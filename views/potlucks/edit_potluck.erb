@@ -1,0 +1,9 @@
+<p>Editing this potluck:</p>
+
+<form method="post" action="/edit_potluck/<%= @potluck.id %>">
+  Name:
+  <%= pre_filled_input("potluck[name]", @potluck.name) %>
+  <br>
+
+  <button>Save Potluck</button>
+</form>

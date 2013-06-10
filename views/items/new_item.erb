@@ -1,0 +1,21 @@
+<h1><%= @potluck.name %></h1>
+<hr>
+
+<h3>Add New Item: </h3>
+
+<form method="post" action="/<%= @potluck.id %>/new_item">
+  Name:
+  <input type="text" name="item[name]">
+  <br>
+
+  Tags:
+  <br>
+  <% Tag.all.each do |tag| %>
+    <input type="checkbox" name="item[tag_ids][]" value="<%= tag.id %>">
+    <%= tag.name %>
+    <br>
+  <% end %>
+  <br>
+
+    <button>Save Item</button>
+  </form>

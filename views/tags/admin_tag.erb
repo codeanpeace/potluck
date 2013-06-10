@@ -1,0 +1,13 @@
+<h1>Here is a list of all tags: </h1>
+
+<p><a href="/new_tag">Add a new tag</a></p>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li>
+      <strong><%= tag.name %></strong>
+      <a href="/delete_tag/<%= tag.id %>">Delete</a>
+    </li>
+  <% end %>
+</ul>
+

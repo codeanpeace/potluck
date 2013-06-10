@@ -1,0 +1,12 @@
+<h1><%= @potluck.name %></h1>
+
+<h3>Claim <%= @item.name %></h3>
+
+<h5>Tags: <%= @item.list_of_tags %></h5>
+
+<form method="post" action="/<%= @potluck.id %>/claim_item/<%= @item.id %>">
+  Name:
+  <input type="text" name="person[name]">
+  <br>
+  <button>Claim Item</button>
+</form>
